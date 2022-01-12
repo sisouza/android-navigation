@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 
@@ -57,7 +58,8 @@ class HomeFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.navigate_destination_button)?.setOnClickListener {
-            findNavController().navigate(R.id.flow_step_one_dest, null, options)
+           //sets navigation to dest and transition through action we set
+            Navigation.createNavigateOnClickListener(R.id.next_action, null)
         }
         //TODO STEP 6 - Set NavOptions
 //        val options = navOptions {
