@@ -21,7 +21,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 
 /**
  * Presents how multiple steps flow could be implemented.
@@ -35,8 +37,11 @@ class FlowStepFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
 
-        val flowStepNumber = arguments?.getInt("flowStepNumber")
+        //val flowStepNumber = arguments?.getInt("flowStepNumber")
 
+        //set flowStep to use safe args
+        val safeArgs: FlowStepFragmentArgs by navArgs()
+        val flowStepNumber = safeArgs.flowStepNumber
         // TODO STEP 8 - Use type-safe arguments - remove previous line!
 //        val safeArgs: FlowStepFragmentArgs by navArgs()
 //        val flowStepNumber = safeArgs.flowStepNumber
